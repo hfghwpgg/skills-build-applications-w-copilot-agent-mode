@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top, rgba(255, 193, 7, 0.18), transparent 28%),
+    linear-gradient(180deg, #0b0d12 0%, #141824 100%);
+}
+
+a {
+  text-decoration: none;
+}

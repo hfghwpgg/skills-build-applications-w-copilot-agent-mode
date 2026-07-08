@@ -36,7 +36,7 @@ function isDateKey(key) {
   return /at|date|time/i.test(key);
 }
 
-export default function ResourcePage({ accent = 'warning', description, emptyMessage, fields, resourceName, title }) {
+export default function ResourcePage({ accent = 'warning', description, emptyMessage, endpointPath, fields, resourceName, title }) {
   const [state, setState] = useState({ status: 'loading', count: 0, records: [], error: '' });
 
   useEffect(() => {
@@ -45,7 +45,7 @@ export default function ResourcePage({ accent = 'warning', description, emptyMes
 
     setState({ status: 'loading', count: 0, records: [], error: '' });
 
-    fetchCollection(resourceName, controller.signal)
+    fetchCollection(endpointPath ?? resourceName, controller.signal)
       .then((result) => {
         if (!isMounted) {
           return;
@@ -67,7 +67,10 @@ export default function ResourcePage({ accent = 'warning', description, emptyMes
     };
   }, [resourceName, title]);
 
-  const endpoint = useMemo(() => `${getApiOrigin()}/api/${resourceName}/`, [resourceName]);
+  const endpoint = useMemo(
+    () => `${getApiOrigin()}${endpointPath ?? `/api/${resourceName}/`}`,
+    [endpointPath, resourceName],
+  );
 
   return (
     <section className="octofit-panel p-4 p-lg-5">

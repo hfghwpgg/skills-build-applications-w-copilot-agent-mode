@@ -1,5 +1,7 @@
 import ResourcePage from './ResourcePage.jsx';
 
+const endpointPath = '/api/activities/';
+
 const fields = [
   { key: 'user', label: 'User' },
   { key: 'team', label: 'Team' },
@@ -15,6 +17,7 @@ export default function Activities() {
       accent="warning"
       description="Track completed sessions, time spent, and calories burned for each user activity."
       emptyMessage="No activities have been recorded yet."
+      endpointPath={endpointPath}
       fields={fields}
       resourceName="activities"
       title="Activities"

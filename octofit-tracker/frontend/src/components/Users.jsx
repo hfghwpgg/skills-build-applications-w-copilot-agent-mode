@@ -1,5 +1,7 @@
 import ResourcePage from './ResourcePage.jsx';
 
+const endpointPath = '/api/users/';
+
 const fields = [
   { key: 'name', label: 'Name' },
   { key: 'email', label: 'Email' },
@@ -14,6 +16,7 @@ export default function Users() {
       accent="primary"
       description="Browse user profiles, team assignments, and workout progress."
       emptyMessage="No users are available yet."
+      endpointPath={endpointPath}
       fields={fields}
       resourceName="users"
       title="Users"

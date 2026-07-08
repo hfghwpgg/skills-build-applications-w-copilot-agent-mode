@@ -1,3 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  color-scheme: dark;
+  --octofit-bg: #07111f;
+  --octofit-surface: rgba(10, 18, 32, 0.86);
+  --octofit-surface-strong: rgba(14, 24, 42, 0.96);
+  --octofit-border: rgba(148, 163, 184, 0.18);
+  --octofit-text: #e5eefc;
+  --octofit-muted: rgba(226, 232, 240, 0.74);
+  --octofit-accent: #ffc107;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--octofit-text);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background:
+    radial-gradient(circle at 14% 14%, rgba(255, 193, 7, 0.16), transparent 24%),
+    radial-gradient(circle at 86% 10%, rgba(59, 130, 246, 0.14), transparent 22%),
+    radial-gradient(circle at 50% 100%, rgba(16, 185, 129, 0.08), transparent 28%),
+    linear-gradient(180deg, #050a14 0%, #0b1323 44%, #111827 100%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+code {
+  color: #fde68a;
+}
+
+.octofit-shell {
+  min-height: 100vh;
+}
+
+.octofit-navbar {
+  background: rgba(3, 7, 18, 0.7);
+  border-bottom: 1px solid var(--octofit-border);
+  backdrop-filter: blur(18px);
+}
+
+.octofit-brand {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.octofit-muted {
+  color: var(--octofit-muted);
+}
+
+.octofit-panel {
+  background: var(--octofit-surface);
+  border: 1px solid var(--octofit-border);
+  border-radius: 1.5rem;
+  box-shadow: 0 24px 80px rgba(3, 7, 18, 0.35);
+}
+
+.octofit-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.octofit-hero::before,
+.octofit-hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.octofit-hero::before {
+  inset: auto auto -120px -120px;
+  width: 240px;
+  height: 240px;
+  background: rgba(255, 193, 7, 0.08);
+}
+
+.octofit-hero::after {
+  inset: -90px -80px auto auto;
+  width: 180px;
+  height: 180px;
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.octofit-feature {
+  background: var(--octofit-surface-strong);
+  color: var(--octofit-text);
+  border: 1px solid var(--octofit-border);
+  border-radius: 1.25rem;
+}
+
+.octofit-nav-link {
+  min-width: 6.5rem;
+}
+
+.table.octofit-table > :not(caption) > * > * {
+  background-color: transparent;
+  color: var(--octofit-text);
+  border-color: rgba(148, 163, 184, 0.16);
+}
+
+.table.octofit-table thead th {
+  color: rgba(226, 232, 240, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  border-bottom-color: rgba(148, 163, 184, 0.25);
+}
+
+.octofit-empty {
+  border: 1px dashed rgba(148, 163, 184, 0.28);
+  border-radius: 1rem;
+  background: rgba(15, 23, 42, 0.4);
+}
 body {
   margin: 0;
   background:
